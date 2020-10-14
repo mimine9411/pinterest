@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html>
+{% extends "pins/base.html.twig" %}
+{% block head %}
 <head>
     <meta charset="UTF-8">
-    <title>Pinterest clone</title>
-
+    <title>{% block title %}Pinterest clone{% endblock %}</title>
 </head>
+{% endblock %}
+{% block body %}
 <body>
     <h1>{{ pluralize(pins|length ,'Pin')}}</h1>
 
@@ -18,4 +19,5 @@
         <p>Sorry, no pins yet !</p>
     {% endfor %}
 </body>
-</html>
+{% endblock %}
+
