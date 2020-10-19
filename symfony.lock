@@ -84,6 +84,9 @@
     "egulias/email-validator": {
         "version": "2.1.22"
     },
+    "knplabs/knp-time-bundle": {
+        "version": "v1.13.0"
+    },
     "laminas/laminas-code": {
         "version": "3.4.1"
     },
@@ -528,6 +531,9 @@
         "version": "v5.1.7"
     },
     "twig/extra-bundle": {
+        "version": "v3.0.5"
+    },
+    "twig/string-extra": {
         "version": "v3.0.5"
     },
     "twig/twig": {

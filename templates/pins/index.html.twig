@@ -1,4 +1,4 @@
-{% extends "pins/base.html.twig" %}
+{% extends "base.html.twig" %}
 {% block head %}
 <head>
     <meta charset="UTF-8">
@@ -9,11 +9,11 @@
 <body>
     <h1>{{ pluralize(pins|length ,'Pin')}}</h1>
 
-    <a href="{{ path('app_pins_create') }}">Créer un nouveau pin.</a>
     {% for pin in pins %}
         <article>
             <h1><a href="{{ path('app_pins_show', {'id': pin.id}) }}">{{ pin.title }}</a></h1>
-            <p>{{ pin.description }}</p>
+            <p>{{ pin.description|u.truncate(10, '...', false) }}</p>
+            <p>Submited {{ pin.createAt|ago }}</p>
         </article>
     {% else %}
         <p>Sorry, no pins yet !</p>
