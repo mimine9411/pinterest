@@ -92,9 +92,11 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $providerKey)
     {
+        $request->getSession()->getFlashBag()->add('success', 'Logged in succesfully !');
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
             return new RedirectResponse($targetPath);
         }
+
 
         return new RedirectResponse($this->urlGenerator->generate('app_login'));
     }
@@ -102,5 +104,10 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
     protected function getLoginUrl()
     {
         return $this->urlGenerator->generate(self::LOGIN_ROUTE);
+    }
+
+    public function supportsRememberMe()
+    {
+        return true;
     }
 }
