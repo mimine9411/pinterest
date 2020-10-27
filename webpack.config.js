@@ -23,10 +23,9 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
-    .addEntry('app', './assets/app.js')
-    .addStyleEntry("tailwind", "./assets/css/tailwind.css")
-    //.addEntry('page1', './assets/page1.js')
-    //.addEntry('page2', './assets/page2.js')
+    .addEntry('app', './assets/js/app.js')
+    //.addEntry('page1', './assets/js/page1.js')
+    //.addEntry('page2', './assets/js/page2.js')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
@@ -54,17 +53,8 @@ Encore
         config.corejs = 3;
     })
 
-    .enablePostCssLoader((options) => {
-        options.config = {
-            // directory where the postcss.config.js file is stored
-            path: "./postcss.config.js",
-        };
-    });
-
-
-
     // enables Sass/SCSS support
-    //.enableSassLoader()
+    .enableSassLoader()
 
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()
@@ -78,7 +68,13 @@ Encore
 
     // uncomment if you use API Platform Admin (composer req api-admin)
     //.enableReactPreset()
-    //.addEntry('admin', './assets/admin.js')
+    //.addEntry('admin', './assets/js/admin.js')
+    
+    .copyFiles({
+        from: './assets/images',
+        to: '[path][name].[hash:8].[ext]',
+        context: './assets'
+    })
 ;
 
 module.exports = Encore.getWebpackConfig();

@@ -5,23 +5,23 @@ namespace App\Entity\Traits;
 trait Timestampable
 {
     /**
-     * @ORM\Column(type="datetime", options={"default" : "CURRENT_TIMESTAMP"})
+     * @ORM\Column(type="datetime", options={"default": "CURRENT_TIMESTAMP"})
      */
-    private $createAt;
+    private $createdAt;
 
     /**
-     * @ORM\Column(type="datetime", options={"default" : "CURRENT_TIMESTAMP"})
+     * @ORM\Column(type="datetime", options={"default": "CURRENT_TIMESTAMP"})
      */
     private $updatedAt;
 
-    public function getCreateAt(): ?\DateTimeInterface
+    public function getCreatedAt(): ?\DateTimeInterface
     {
-        return $this->createAt;
+        return $this->createdAt;
     }
 
-    public function setCreateAt(\DateTimeInterface $createAt): self
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
     {
-        $this->createAt = $createAt;
+        $this->createdAt = $createdAt;
 
         return $this;
     }
@@ -44,10 +44,10 @@ trait Timestampable
      */
     public function updateTimestamps()
     {
-        $lastupdated = new \DateTimeImmutable;
-        if($this->getCreateAt() === null) {
-            $this->setCreateAt($lastupdated);
+        if ($this->getCreatedAt() === null) {
+            $this->setCreatedAt(new \DateTimeImmutable);
         }
-        $this->setUpdatedAt($lastupdated);
+        
+        $this->setUpdatedAt(new \DateTimeImmutable);
     }
 }

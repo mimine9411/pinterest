@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/pinterest.iml" filepath="$PROJECT_DIR$/.idea/pinterest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/panterest.iml" filepath="$PROJECT_DIR$/.idea/panterest.iml" />
     </modules>
   </component>
 </project>

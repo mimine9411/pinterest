@@ -1,55 +1,52 @@
-{% extends 'base.html.twig' %}
+{% extends 'layouts/base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title 'Log in!' %}
 
 {% block body %}
     <div class="row">
         <div class="col-md-6 mx-auto">
-
-            <h1 class="text-center mt-5 mb-3">Please sign in</h1>
-            <p class="text-center text-muted mb-5">Your pins are waiting for you !</p>
+            <h1 class="mt-5 mb-3 text-center">Please sign in</h1>
+            <p class="mb-5 text-center text-muted">Your pins are waiting for you.</p>
 
             <form method="post">
                 {% if error %}
-                    <div class="alert alert-danger mb-3 bg-danger rounded"
-                         role="alert">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                {% endif %}
-
-                {% if app.user %}
-                    <div class="mb-3">
-                        You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                    <div class="alert alert-error rounded mb-3" role="alert">
+                        {{ error.messageKey|trans(error.messageData, 'security') }}
                     </div>
                 {% endif %}
-
+                
                 <div class="form-group">
-                    <label for="inputEmail">Email</label>
-                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control"
-                           required autofocus>
-                </div>
-                <div class="form-group">
-                    <label for="inputPassword">Password</label>
-                    <input type="password" name="password" id="inputPassword" class="form-control" required>
-                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                    <label for="email">Email</label>
+                    <input type="email" value="{{ last_username }}" name="email" id="email" class="form-control" required autofocus>
                 </div>
 
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" class="form-control" required>
+                </div>
 
-                {# Uncomment this section and add a remember_me option below your firewall to activate remember me functionality. #}
-                {# See https://symfony.com/doc/current/security/remember_me.html #}
                 <div class="d-flex justify-content-between">
-                    <div class="checkbox mb-3">
-                        <label>
-                            <input type="checkbox" name="_remember_me"> Remember me
-                        </label>
+                    <div class="form-group">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" name="_remember_me" id="remember_me">
+                          <label class="form-check-label" for="remember_me">
+                            Remember me
+                          </label>
+                        </div>
                     </div>
-                    <a href="#">Forgot password ?</a>
-                </div>
 
-                <button class="btn btn-lg btn-primary btn-block" type="submit">
+                    <a href="#">Forgot password?</a>
+                </div>
+                
+                <input type="hidden" name="csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                <button class="btn btn-lg btn-block btn-primary" type="submit">
                     Sign in
                 </button>
 
-                <p class="mt-5 mb-3 text-center text-muted">Not registered yet ? <a href="{{ path('app_register') }}">Create an account !</a></p>
-
+                <p class="mt-5 mb-3 text-center text-muted">
+                    Not registered yet? <a href="{{ path('app_register') }}">Create an account</a>
+                </p>
             </form>
         </div>
     </div>
