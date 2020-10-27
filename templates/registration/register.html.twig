@@ -12,7 +12,7 @@
 
             <h1 class="text-center my-5">Create an account</h1>
 
-            {{ form_start(registrationForm) }}
+            {{ form_start(registrationForm, {'attr': {'novalidate': 'novalidate'}}) }}
             <div class="row">
                 <div class="col-md-6">{{ form_row(registrationForm.firstName) }}</div>
                 <div class="col-md-6">{{ form_row(registrationForm.lastName) }}</div>
@@ -21,7 +21,7 @@
             {{ form_row(registrationForm.plainPassword) }}
             {{ form_row(registrationForm.agreeTerms) }}
 
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+            <button type="submit" class="btn btn-primary btn-lg btn-block" formnovalidate>Register</button>
             {{ form_end(registrationForm) }}
 
             <p class="text-muted mt-5 mb-3 text-center">Already have an account ?<a href="{{ path('app_login') }}"> Log in !</a></p>
