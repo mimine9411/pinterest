@@ -6,6 +6,7 @@ use App\Entity\Pin;
 use App\Form\PinType;
 use App\Repository\PinRepository;
 use App\Repository\UserRepository;
+use App\Security\Voter\PinVoter;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Finder\Exception\AccessDeniedException;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,10 +29,11 @@ class PinsController extends AbstractController
     /**
      * @Route("/pins/create", name="app_pins_create", methods={"GET", "POST"})
      */
-    public function create(Request $request, EntityManagerInterface $em, UserRepository $userRepo): Response
+    public function create(Request $request, EntityManagerInterface $em, UserRepository $userRepo, PinVoter $voter): Response
     {
-        $pin = new Pin;
 
+        $pin = new Pin;
+        $this->denyAccessUnlessGranted($voter::CREATE, $pin);
         $form = $this->createForm(PinType::class, $pin);
 
         $form->handleRequest($request);
@@ -54,16 +56,18 @@ class PinsController extends AbstractController
     /**
      * @Route("/pins/{id<[0-9]+>}", name="app_pins_show", methods="GET")
      */
-    public function show(Pin $pin): Response
+    public function show(Pin $pin, PinVoter $voter): Response
     {
+        $this->denyAccessUnlessGranted($voter::SHOW, $pin);
         return $this->render('pins/show.html.twig', compact('pin'));
     }
     
     /**
      * @Route("/pins/{id<[0-9]+>}/edit", name="app_pins_edit", methods={"GET", "PUT"})
      */
-    public function edit(Request $request, Pin $pin, EntityManagerInterface $em): Response
+    public function edit(Request $request, Pin $pin, EntityManagerInterface $em, PinVoter $voter): Response
     {
+        $this->denyAccessUnlessGranted($voter::DELETE, $pin);
         $form = $this->createForm(PinType::class, $pin, [
             'method' => 'PUT'
         ]);
@@ -87,8 +91,9 @@ class PinsController extends AbstractController
     /**
      * @Route("/pins/{id<[0-9]+>}", name="app_pins_delete", methods={"DELETE"})
      */
-    public function delete(Request $request, Pin $pin, EntityManagerInterface $em): Response
+    public function delete(Request $request, Pin $pin, EntityManagerInterface $em, PinVoter $voter): Response
     {
+        $this->denyAccessUnlessGranted($voter::DELETE, $pin);
         if ($this->isCsrfTokenValid('pin_deletion_' . $pin->getId(), $request->request->get('csrf_token'))) {
             $em->remove($pin);
             $em->flush();

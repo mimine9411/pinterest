@@ -61,6 +61,11 @@ class Pin
      */
     private $user;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isVerified;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -129,6 +134,18 @@ class Pin
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getIsVerified(): ?bool
+    {
+        return $this->isVerified;
+    }
+
+    public function setIsVerified(bool $isVerified): self
+    {
+        $this->isVerified = $isVerified;
 
         return $this;
     }
