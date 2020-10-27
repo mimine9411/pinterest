@@ -3,21 +3,30 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    {% for flashError in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-    {% endfor %}
 
-    <h1>Register</h1>
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            {% for flashError in app.flashes('verify_email_error') %}
+                <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+            {% endfor %}
 
-    {{ form_start(registrationForm) }}
-    {{ form_row(registrationForm.firstName) }}
-    {{ form_row(registrationForm.lastName) }}
-    {{ form_row(registrationForm.email) }}
-    {{ form_row(registrationForm.plainPassword) }}
-    {{ form_row(registrationForm.agreeTerms) }}
+            <h1 class="text-center my-5">Create an account</h1>
 
-    <button type="submit" class="btn btn-primary">Register</button>
-    {{ form_end(registrationForm) }}
+            {{ form_start(registrationForm) }}
+            <div class="row">
+                <div class="col-md-6">{{ form_row(registrationForm.firstName) }}</div>
+                <div class="col-md-6">{{ form_row(registrationForm.lastName) }}</div>
+            </div>
+            {{ form_row(registrationForm.email) }}
+            {{ form_row(registrationForm.plainPassword) }}
+            {{ form_row(registrationForm.agreeTerms) }}
 
-    <p class="text-muted mt-5">Already have an account ?<a href="{{ path('app_login') }}"> Log in !</a></p>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+            {{ form_end(registrationForm) }}
+
+            <p class="text-muted mt-5 mb-3 text-center">Already have an account ?<a href="{{ path('app_login') }}"> Log in !</a></p>
+        </div>
+    </div>
+
+
 {% endblock %}
