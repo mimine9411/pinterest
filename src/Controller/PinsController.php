@@ -26,7 +26,7 @@ class PinsController extends AbstractController
      */
     public function show(Pin $pin): Response
     {
-        return $this->render('pins/show.html.twig', compact('pin'));
+        return $this->render('pins/show.html.twig', ['pin'=>$pin, 'user'=>$this->getUser()]);
     }
 
 
@@ -43,12 +43,13 @@ class PinsController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()) {
 
+            $pin->setUser($this->getUser());
             $em->persist($pin);
             $em->flush();
 
             $this->addFlash('success', 'Pin successfully created');
 
-            return $this->redirectToRoute('app_pins_show', ['id'=>$pin->getId()]);
+            return $this->redirectToRoute('app_pins_show', ['id'=>$pin->getId()], );
         }
 
         return $this->render('pins/create.html.twig', ['form'=>$form->createView()]);

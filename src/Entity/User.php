@@ -160,6 +160,11 @@ class User implements UserInterface
         return $this;
     }
 
+    public function getFullName(): ?string
+    {
+        return $this->firstName.' '.$this->lastName;
+    }
+
     /**
      * @return Collection|Pin[]
      */

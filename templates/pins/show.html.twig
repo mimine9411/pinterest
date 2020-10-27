@@ -9,6 +9,7 @@
 <article>
     <h1>{{ pin.title }}</h1>
     <p>{{ pin.description }}</p>
+    <p class="text-muted">Submitted {{ pin.createAt|date|ago }} by {{ pin.user.fullName }}</p>
 </article>
 
     <p>

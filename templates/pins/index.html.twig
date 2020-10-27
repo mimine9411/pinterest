@@ -13,7 +13,7 @@
         <article>
             <h1><a href="{{ path('app_pins_show', {'id': pin.id}) }}">{{ pin.title }}</a></h1>
             <p>{{ pin.description|u.truncate(10, '...', false) }}</p>
-            <p>Submited {{ pin.createAt|ago }}</p>
+            <p class="text-muted mt-2">Submitted by {{ pin.user.fullName }}</p>
         </article>
     {% else %}
         <p>Sorry, no pins yet !</p>
