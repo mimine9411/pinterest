@@ -22,7 +22,7 @@
                     </p>
 
                     <p class="pt-3 text-break">
-                        {{ pin.description }}
+                        {{ make_tags_clickable(pin.description) | raw }}
                     </p>
                     {% if app.user == pin.user or 'ROLE_ADMIN' in app.user.roles %}
                     <div class="pt-3">

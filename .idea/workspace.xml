@@ -19,16 +19,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="edf096df-ed91-4208-843f-54ab3925a78b" name="Default Changelist" comment="Authorization finished">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201027221145.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/SjdosdController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/sjdosd/index.html.twig" afterDir="false" />
+    <list default="true" id="edf096df-ed91-4208-843f-54ab3925a78b" name="Default Changelist" comment="admin mode finished">
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201028092133.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201028142450.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201028144610.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201028150314.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201028150712.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Tag.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/TagRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pins/tag.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/app.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/PinsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PinsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Pin.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Pin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layouts/partials/_nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layouts/partials/_nav.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/PinRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PinRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Twig/AppExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Twig/AppExtension.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pins/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pins/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,7 +202,8 @@
       <workItem from="1603802818944" duration="11127000" />
       <workItem from="1603819000967" duration="7480000" />
       <workItem from="1603832560711" duration="10246000" />
-      <workItem from="1603843150425" duration="374000" />
+      <workItem from="1603843150425" duration="495000" />
+      <workItem from="1603874727799" duration="28818000" />
     </task>
     <task id="LOCAL-00001" summary="Honoré project">
       <created>1603830556212</created>
@@ -213,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603836607130</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="admin mode finished">
+      <created>1603843624973</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603843624973</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,7 +248,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Honoré project" />
     <MESSAGE value="Authorization finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="Authorization finished" />
+    <MESSAGE value="admin mode finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin mode finished" />
   </component>
   <component name="WindowStateProjectService">
     <state x="721" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603802952120">
@@ -246,6 +260,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="589" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603835029240" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603877496443">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603877496443" />
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603839571216">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -278,13 +296,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603818697139" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1603836610890">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1603843642395">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603836610890" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1603842136941">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603843642395" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1603894360728">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603842136941" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603894360728" />
   </component>
 </project>

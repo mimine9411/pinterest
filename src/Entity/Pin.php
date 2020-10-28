@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\PinRepository;
 use App\Entity\Traits\Timestampable;
@@ -64,7 +66,17 @@ class Pin
     /**
      * @ORM\Column(type="boolean")
      */
-    private $isVerified;
+    private $isVerified = false;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Tag::class, inversedBy="pins")
+     */
+    private $tag;
+
+    public function __construct()
+    {
+        $this->tag = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -149,4 +161,29 @@ class Pin
 
         return $this;
     }
+
+    /**
+     * @return Collection|tag[]
+     */
+    public function getTag(): Collection
+    {
+        return $this->tag;
+    }
+
+    public function addTag(tag $tag): self
+    {
+        if (!$this->tag->contains($tag)) {
+            $this->tag[] = $tag;
+        }
+
+        return $this;
+    }
+
+    public function removeTag(tag $tag): self
+    {
+        $this->tag->removeElement($tag);
+
+        return $this;
+    }
+
 }
