@@ -18,13 +18,18 @@
                             </div>
                             <h2 class="h5 pl-3 pt-3"><a href="{{ path('app_pins_show', {id: pin.id}) }}" class="text-secondary text-decoration-none">{{ pin.title }}</a></h2>
                             <p class="pl-3 pb-3 text-muted"><small>Submitted by {{ pin.user.fullName }}</small></p>
+                            <a href="{{ path('app_admin_verify', {id: pin.id}) }}" class="btn btn-dark">Verify</a>
+                            <a href="{{ path('app_admin_delete', {id: pin.id}) }}" onclick="return confirm('Are you sure ?')" class="btn btn-danger">Delete</a>
+                            </form>
                         </article>
                     </div>
+
                 {% endfor %}
             </div>
+
         {% endfor %}
     {% else %}
-        <p class="mt-5 h1 text-center">No pins yet. <a href="{{ path('app_pins_create') }}">Be the first!</a></p>
+        <p class="mt-5 h1 text-center">No pins to verify. Well done {{ app.user.firstName }} !</p>
     {% endif %}
 {% endblock %}
 

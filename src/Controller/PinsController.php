@@ -40,6 +40,7 @@ class PinsController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $pin->setUser($this->getUser());
+            $pin->setIsVerified(false);
             $em->persist($pin);
             $em->flush();
 
@@ -67,7 +68,7 @@ class PinsController extends AbstractController
      */
     public function edit(Request $request, Pin $pin, EntityManagerInterface $em, PinVoter $voter): Response
     {
-        $this->denyAccessUnlessGranted($voter::DELETE, $pin);
+        $this->denyAccessUnlessGranted($voter::EDIT, $pin);
         $form = $this->createForm(PinType::class, $pin, [
             'method' => 'PUT'
         ]);
