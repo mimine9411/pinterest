@@ -4,7 +4,7 @@
 
 {% block body %}
     {% if pins|length > 0 %}
-        <h1 class="mb-4 text-center text-muted">{{ pluralize(pins|length, 'Pin') }}</h1>
+        <h1 class="mb-4 text-center text-muted">{{ pluralize(pins|length, 'Pin') }} founded with the {{ tagName }} !</h1>
 
         {% for row in pins|batch(3) %}
             <div class="row mb-5">
@@ -24,6 +24,6 @@
             </div>
         {% endfor %}
     {% else %}
-        <p class="mt-5 h1 text-center">No pins yet. <a href="{{ path('app_pins_create') }}">Be the first!</a></p>
+        <p class="mt-5 h1 text-center">No pins founded with {{ tagName }} !</p>
     {% endif %}
 {% endblock %}

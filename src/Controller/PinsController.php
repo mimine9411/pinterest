@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Pin;
 use App\Entity\Tag;
 use App\Form\PinType;
+use App\Form\TagFormType;
 use App\Repository\PinRepository;
 use App\Repository\TagRepository;
 use App\Repository\UserRepository;
@@ -152,8 +153,24 @@ class PinsController extends AbstractController
     {
         $tagName = '#'.$tagName;
         $tag = $tagRepository->findOneBy(['name' => $tagName]);
-        $pins = $tag->getPins()->toArray();
-        return $this->render('pins/tag.html.twig', ['pins' => $pins]);
+        $pins = [];
+        if($tag !== null) {
+            $pins = $tag->getPins()->toArray();
+        }
+        return $this->render('pins/tag.html.twig', ['pins' => $pins, 'tagName'=>$tagName]);
+    }
+
+    /**
+     * @Route("/search/tags", name="app_tag_search")
+     */
+    public function searchTag(Request $request): Response
+    {
+
+        if(($tagName = $request->request->get('tagName')) === '')
+        {
+             $tagName = ' ';
+        }
+        return  $this->redirectToRoute('app_pins_tag', ['tagName' => $tagName]);
     }
 
 }

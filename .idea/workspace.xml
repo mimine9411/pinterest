@@ -19,22 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="edf096df-ed91-4208-843f-54ab3925a78b" name="Default Changelist" comment="admin mode finished">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201028092133.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201028142450.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201028144610.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201028150314.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201028150712.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Tag.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/TagRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/pins/tag.html.twig" afterDir="false" />
+    <list default="true" id="edf096df-ed91-4208-843f-54ab3925a78b" name="Default Changelist" comment="tags near to finished">
+      <change afterPath="$PROJECT_DIR$/templates/layouts/partials/_form.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/app.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/PinsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PinsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Pin.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Pin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/PinRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PinRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Twig/AppExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Twig/AppExtension.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pins/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pins/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layouts/partials/_nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layouts/partials/_nav.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pins/tag.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pins/tag.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +193,7 @@
       <workItem from="1603819000967" duration="7480000" />
       <workItem from="1603832560711" duration="10246000" />
       <workItem from="1603843150425" duration="495000" />
-      <workItem from="1603874727799" duration="28818000" />
+      <workItem from="1603874727799" duration="35807000" />
     </task>
     <task id="LOCAL-00001" summary="Honoré project">
       <created>1603830556212</created>
@@ -226,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603843624973</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="tags near to finished">
+      <created>1603906726272</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1603906726272</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,7 +246,8 @@
     <MESSAGE value="Honoré project" />
     <MESSAGE value="Authorization finished" />
     <MESSAGE value="admin mode finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin mode finished" />
+    <MESSAGE value="tags near to finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="tags near to finished" />
   </component>
   <component name="WindowStateProjectService">
     <state x="721" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603802952120">
@@ -296,13 +294,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603818697139" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1603843642395">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1603906729184">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603843642395" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1603894360728">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603906729184" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1603911128446">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603894360728" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603911128446" />
   </component>
 </project>

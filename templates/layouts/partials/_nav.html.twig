@@ -9,20 +9,24 @@
         <div class="collapse navbar-collapse" id="navbarsExample03">
             <ul class="navbar-nav ml-auto">
                 {% if app.user %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_pins_create') }}">New Pin</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Account</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
-                </li>
-                {% if 'ROLE_ADMIN' in app.user.roles %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_admin') }}">Admin mode</a>
-                </li>
-                {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_pins_create') }}">New Pin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
+                    </li>
+                    <form class="form-inline my-2 my-lg-0" action="{{ path('app_tag_search') }}" method="post">
+                        <input class="form-control mr-sm-2" name="tagName" type="search" placeholder="# Search" aria-label="Search" required>
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                    {% if 'ROLE_ADMIN' in app.user.roles %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_admin') }}">Admin mode</a>
+                        </li>
+                    {% endif %}
                 {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('app_register') }}">Register</a>
