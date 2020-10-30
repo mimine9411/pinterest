@@ -8,14 +8,13 @@ use App\Form\PinType;
 use App\Form\TagFormType;
 use App\Repository\PinRepository;
 use App\Repository\TagRepository;
-use App\Repository\UserRepository;
 use App\Security\Voter\PinVoter;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\Finder\Exception\AccessDeniedException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Security\Core\Security;
 
 class PinsController extends AbstractController
 {
@@ -31,10 +30,15 @@ class PinsController extends AbstractController
     /**
      * @Route("/pins/create", name="app_pins_create", methods={"GET", "POST"})
      */
-    public function create(Request $request, EntityManagerInterface $em, UserRepository $userRepo, TagRepository $tagRepository, PinVoter $voter): Response
+    public function create(Request $request, EntityManagerInterface $em, TagRepository $tagRepository, PinVoter $voter, Security $security): Response
     {
 
         $pin = new Pin;
+
+        if($security->getUser() !== null && !$security->getUser()->isVerified()) {
+            $this->addFlash('info', 'Please verify your account before creating a new pin. To send a new confirmation link, go to -> Account.');
+            return $this->redirectToRoute('app_home');
+        }
         $this->denyAccessUnlessGranted($voter::CREATE, $pin);
         $form = $this->createForm(PinType::class, $pin);
 
@@ -57,7 +61,6 @@ class PinsController extends AbstractController
                 }
                 else {
                     $tag = $existingTag;
-
                 }
                 $tag->addPin($pin);
 

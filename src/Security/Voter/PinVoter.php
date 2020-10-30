@@ -3,7 +3,6 @@
 namespace App\Security\Voter;
 
 use App\Entity\Pin;
-use App\Entity\User;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\Voter\Voter;
 use Symfony\Component\Security\Core\Security;
@@ -15,6 +14,7 @@ class PinVoter extends Voter
     const EDIT = 'edit';
     const DELETE = 'delete';
     const CREATE = 'create';
+
     private $security;
 
     public function __construct(Security $security)
@@ -45,7 +45,7 @@ class PinVoter extends Voter
             case self::DELETE:
                 return $this->canDelete($pin, $user);
             case self::CREATE:
-                return true;
+                return $this->canCreate($user);
         }
         throw new \LogicException('This code should not be reached!');
     }
@@ -66,6 +66,14 @@ class PinVoter extends Voter
     public function canDelete(Pin $pin, UserInterface $user)
     {
         if($this->canEdit($pin, $user)) {
+            return true;
+        }
+        return false;
+    }
+
+    public function canCreate(UserInterface $user)
+    {
+        if($user->isVerified() | $this->security->isGranted('ROLE_ADMIN')) {
             return true;
         }
         return false;

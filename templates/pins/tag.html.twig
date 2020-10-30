@@ -1,7 +1,8 @@
 {% extends 'layouts/base.html.twig' %}
 
-{% block title 'Find all the best pins on earth!' %}
-
+{% block title  %}
+{{ tagName }}
+{% endblock %}
 {% block body %}
     {% if pins|length > 0 %}
         <h1 class="mb-4 text-center text-muted">{{ pluralize(pins|length, 'Pin') }} founded with the {{ tagName }} !</h1>

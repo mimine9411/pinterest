@@ -1,0 +1,36 @@
+{% extends 'layouts/base.html.twig' %}
+{% block title 'Manage your account !' %}
+{% block body %}
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            {% for flashError in app.flashes('verify_email_error') %}
+                <div class="alert alert-error rounded mb-3" role="alert">{{ flashError }}</div>
+            {% endfor %}
+
+            <h1 class="my-5 text-center">Manage your account !</h1>
+
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="col-md-6">
+                    {{ form_row(form.firstName) }}
+                </div>
+
+                <div class="col-md-6">
+                    {{ form_row(form.lastName) }}
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block" formnovalidate>
+                Update your account
+            </button>
+            {{ form_end(form) }}
+            {% if not app.user.verified %}
+            <div class="mt-5">
+                <a href="{{ path('app_send_email', {'id': app.user.id}) }}">Send a new verification link !</a>
+            </div>
+            {% endif %}
+            <div class="mt-3">
+                <a href="{{ path('app_account_change_password', {'id': app.user.id}) }}">Change password ?</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -19,12 +19,41 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="edf096df-ed91-4208-843f-54ab3925a78b" name="Default Changelist" comment="tags near to finished">
-      <change afterPath="$PROJECT_DIR$/templates/layouts/partials/_form.html.twig" afterDir="false" />
+    <list default="true" id="edf096df-ed91-4208-843f-54ab3925a78b" name="Default Changelist" comment="tags finished ! + search bar">
+      <change afterPath="$PROJECT_DIR$/config/packages/reset_password.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201028093403.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201030152833.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/ResetPasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/ResetPasswordRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/AccountType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/ChangePasswordFormType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/ResetPasswordRequestFormType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ResetPasswordRequestRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Security/Voter/UserVoter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/account/account.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/reset_password/check_email.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/reset_password/email.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/reset_password/request.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/reset_password/reset.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/panterest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/panterest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/PinsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PinsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/Voter/PinVoter.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/Voter/PinVoter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/layouts/partials/_nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layouts/partials/_nav.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pins/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pins/create.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pins/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pins/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pins/tag.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pins/tag.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,6 +189,7 @@
       <path value="$PROJECT_DIR$/vendor/symfonycasts/verify-email-bundle" />
       <path value="$PROJECT_DIR$/vendor/twig/string-extra" />
       <path value="$PROJECT_DIR$/vendor/vich/uploader-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfonycasts/reset-password-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jSgHMwKltrcqWFJVfgb5TNwbTU" />
@@ -193,7 +223,8 @@
       <workItem from="1603819000967" duration="7480000" />
       <workItem from="1603832560711" duration="10246000" />
       <workItem from="1603843150425" duration="495000" />
-      <workItem from="1603874727799" duration="35807000" />
+      <workItem from="1603874727799" duration="36439000" />
+      <workItem from="1604048041756" duration="18434000" />
     </task>
     <task id="LOCAL-00001" summary="Honoré project">
       <created>1603830556212</created>
@@ -223,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603906726272</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="tags finished ! + search bar">
+      <created>1603916125592</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1603916125592</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,25 +285,26 @@
     <MESSAGE value="Authorization finished" />
     <MESSAGE value="admin mode finished" />
     <MESSAGE value="tags near to finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="tags near to finished" />
+    <MESSAGE value="tags finished ! + search bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="tags finished ! + search bar" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="721" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603802952120">
+    <state x="721" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604054957853">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="721" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1603802952120" />
-    <state x="589" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603835029240">
+    <state x="721" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1604054957853" />
+    <state x="154" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604048400987">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="589" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603835029240" />
+    <state x="154" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604048400987" />
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603877496443">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603877496443" />
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603839571216">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604074173542">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603839571216" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604074173542" />
     <state x="629" y="298" key="EditFileWatcherDialog" timestamp="1603805978731">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -294,13 +333,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603818697139" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1603906729184">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1603916129014">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603906729184" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1603911128446">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603916129014" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604074756906">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603911128446" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1604074756906" />
   </component>
 </project>
