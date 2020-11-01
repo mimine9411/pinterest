@@ -31,8 +31,6 @@ class AdminController extends AbstractController
     public function verify(Pin $pin, EntityManagerInterface $em): Response
     {
         $pin->setIsVerified(true);
-
-        $em->persist($pin);
         $em->flush();
         return $this->redirectToRoute('app_admin');
     }
